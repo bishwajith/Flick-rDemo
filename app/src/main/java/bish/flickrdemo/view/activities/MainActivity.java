@@ -1,8 +1,8 @@
 package bish.flickrdemo.view.activities;
 
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.GridView;
 
@@ -17,9 +17,9 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 import bish.flickrdemo.R;
-import bish.flickrdemo.view.adapters.MyGridAdapter;
 import bish.flickrdemo.controller.AppController;
 import bish.flickrdemo.model.ImageInfo;
+import bish.flickrdemo.view.adapters.MyGridAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,13 +29,14 @@ public class MainActivity extends AppCompatActivity {
     private String[] imageUrl;
     private ProgressDialog progressDialog;
     private final String TAG = MainActivity.class.getSimpleName();
-    private final String URL = "https://api.flickr.com/services/rest/?method=flickr.people.getPhotos&" +
-                                "api_key=7c0b4f68919d2f382b5c3afee4c0b0ad&" +
+    private final String URL = "https://api.flickr.com/services/rest/?" +
+                                "method=flickr.people.getPublicPhotos&" +
+                                "api_key=9f053a84fb6b5a182d8bb57486941cbe&" +
                                 "user_id=143325745%40N05&" +
-                                "format=json&" +
-                                "nojsoncallback=1&" +
-                                "auth_token=72157668691596985-8c6777b06f558a21&" +
-                                "api_sig=3510b56ddefba94f798257448cff4add";
+                                "format=json&nojsoncallback=1&" +
+                                "auth_token=72157668362308672-023ec8e1d0997998&" +
+                                "api_sig=566db951a3a954b4e1143781eed49673";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     for(int i=0; i<jsonArraySize;i++){
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         imageUrl[i] = buildFlickrImgUrl(jsonObject);
+
                         imageInfoArrayList.add(new ImageInfo(
                                 jsonObject.getString("title"),
                                 buildFlickrImgUrl(jsonObject)
