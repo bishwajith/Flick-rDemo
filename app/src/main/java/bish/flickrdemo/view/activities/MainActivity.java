@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -99,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     //updating the gridview adapter
                     myGridAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
+                    Toast.makeText(getApplicationContext(),"Oops..Something Went Wrong!!!",Toast.LENGTH_SHORT).show();
                     e.printStackTrace();
                 }
                 progressDialog.cancel();

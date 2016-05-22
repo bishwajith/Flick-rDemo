@@ -1,7 +1,6 @@
 package bish.flickrdemo.controller;
 
 import android.app.Application;
-import android.text.TextUtils;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,11 +33,6 @@ public class AppController extends Application {
         return myRequestQueue;
     }
 
-    public <T> void addToRequestQueue(Request<T> request, String tag) {
-        // set the default tag if tag is empty
-        request.setTag(TextUtils.isEmpty(tag) ? TAG : tag);
-        getRequestQueue().add(request);
-    }
     public <T> void addToRequestQueue(Request<T> request) {
         request.setTag(TAG);
         getRequestQueue().add(request);
