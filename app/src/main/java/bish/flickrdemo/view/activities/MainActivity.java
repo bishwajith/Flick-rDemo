@@ -30,13 +30,12 @@ public class MainActivity extends AppCompatActivity {
     private String[] imageUrl;
     private ProgressDialog progressDialog;
     private final String TAG = MainActivity.class.getSimpleName();
-    private final String URL = "https://api.flickr.com/services/rest/?" +
-                                "method=flickr.people.getPublicPhotos&" +
-                                "api_key=9f053a84fb6b5a182d8bb57486941cbe&" +
-                                "user_id=143325745%40N05&" +
-                                "format=json&nojsoncallback=1&" +
-                                "auth_token=72157668362308672-023ec8e1d0997998&" +
-                                "api_sig=566db951a3a954b4e1143781eed49673";
+    private final String API_KEY = "fe33201be00e3db3021a86b8b7b16348";
+    private final String USER_ID = "143325745@N05";
+    private final String URL =  "https://api.flickr.com/services/rest/?" +
+                                "&method=flickr.people.getPublicPhotos" +
+                                "&api_key=fe33201be00e3db3021a86b8b7b16348" +
+                                "&user_id=143325745@N05&format=json&nojsoncallback=1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
