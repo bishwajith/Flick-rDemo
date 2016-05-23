@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
     private final String USER_ID = "143325745@N05";
     private final String URL =  "https://api.flickr.com/services/rest/?" +
                                 "&method=flickr.people.getPublicPhotos" +
-                                "&api_key=fe33201be00e3db3021a86b8b7b16348" +
-                                "&user_id=143325745@N05&format=json&nojsoncallback=1";
+                                "&api_key="+API_KEY+
+                                "&user_id="+USER_ID+"&format=json&nojsoncallback=1";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
